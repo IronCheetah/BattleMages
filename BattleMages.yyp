@@ -103,6 +103,22 @@
             }
         },
         {
+            "Key": "2ae66bc6-cdbf-483b-9424-415d84b02ba4",
+            "Value": {
+                "id": "d99a431c-edb1-4175-8f5c-74cd03293f2d",
+                "resourcePath": "sprites\\sprite_hitbox\\sprite_hitbox.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "2dc47ca7-0713-4434-b69c-fc5874b73e39",
+            "Value": {
+                "id": "66c4479f-5312-4232-a2e5-808f80878510",
+                "resourcePath": "sprites\\red_mage_melee_normal\\red_mage_melee_normal.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "329e8d50-89d2-4a71-b4ee-638bc310871f",
             "Value": {
                 "id": "b1ddaeda-42cc-456c-ac49-49a69036be43",
@@ -183,6 +199,14 @@
             }
         },
         {
+            "Key": "7456f92d-1c46-41ab-9791-e67dbc9c17d5",
+            "Value": {
+                "id": "c4000306-ca70-47ed-a70f-84f78ee6f2e9",
+                "resourcePath": "objects\\obj_weapon\\obj_weapon.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "7c847908-bac9-447b-9dbd-17423dae8f49",
             "Value": {
                 "id": "27aeff40-f444-4a13-91b7-eded96b6ed01",
@@ -211,6 +235,14 @@
             "Value": {
                 "id": "b62a2cda-ff20-42bb-8f29-0f4560263a1f",
                 "resourcePath": "sprites\\red_mage_idle\\red_mage_idle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "7e4bc6a6-80f4-4b17-bdfd-7e371d10fb4a",
+            "Value": {
+                "id": "b25eaf2a-c550-4a5c-8e7b-44052457c98f",
+                "resourcePath": "sprites\\sprite_sword\\sprite_sword.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -268,6 +300,14 @@
                 "id": "d7620a1b-29fe-416d-8d16-fa47b8a8de08",
                 "resourcePath": "views\\c3196186-19e4-456e-85a2-02eecb06849e.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "c3919458-db96-4cac-9ebe-54504f896326",
+            "Value": {
+                "id": "714d81cc-bde7-4f57-82d0-fb5744b528dc",
+                "resourcePath": "sprites\\red_mage_melee_icelvl2\\red_mage_melee_icelvl2.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

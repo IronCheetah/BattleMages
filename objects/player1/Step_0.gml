@@ -7,6 +7,7 @@ key_jump = (keyboard_check_pressed(vk_space)) || (gamepad_button_check_pressed(0
 key_jump_held = keyboard_check(vk_space) || (gamepad_button_check(0, gp_face1));
 key_guard = mouse_check_button(mb_right) || gamepad_button_check(0, gp_face2);
 key_special = mouse_check_button(mb_left) || gamepad_button_check(0, gp_face4);
+key_melee = keyboard_check(ord("E")) || gamepad_button_check(0, gp_face3);
 
 //Testing Commands
 key_switch_lightning_mage = keyboard_check(ord("2"));
@@ -34,8 +35,60 @@ if ((haxis = 0) && (vaxis = 0))
 }
 else
 {
+	if (haxis < 0) haxis_temp = haxis * -1;
+	else
+	{
+	haxis_temp = haxis;
+	}
+	
+	if (vaxis < 0) vaxis_temp = vaxis * -1;
+	else
+	{
+	vaxis_temp = vaxis;
+	}
+	
+	if (haxis_temp > vaxis_temp)
+	{
+		if (haxis > 0)
+		{
+		//Right
+		show_debug_message("Right");
+		pd_simple = point_direction(0, 0, 1, 0);
+		}
+		else
+		{
+		//Left
+		show_debug_message("Left");
+		pd_simple = point_direction(0, 0, -1, 0);	}
+	}
+	
+	if (haxis_temp > vaxis_temp)
+	{
+		if (vaxis > 0)
+		{
+		//Down
+		show_debug_message("Down");
+		pd_simple = point_direction(0, 0, 0, 1);
+		}
+		else
+		{
+		//Up
+		show_debug_message("Up");
+		pd_simple = point_direction(0, 0, 0, -1);
+		}
+	}
+	
+	else
+	{
+	//Vertical diretions
+	}
+}
+{
 player_direction = point_direction(0, 0, haxis, vaxis);
 }
+
+// Melee Check
+
 
 //Max Falling Speed
 if (vsp < 100) vsp += grav;
@@ -62,6 +115,35 @@ crouching = 1;
 if (grounded) hsp = 0;
 }
 else crouching = 0;
+
+
+//=========== Sword ===========================
+
+//Melee Cooldown
+if (melee_cooldown < melee_cooldown_max) melee_cooldown += 1;
+
+//Melee Attack
+if (key_melee)
+{
+	if (melee_cooldown = melee_cooldown_max)
+	{
+		
+		melee_cooldown = 0;
+		
+		if (global.player1_class = 1)
+		{
+		ice_melee = 1;
+		}
+		
+		else
+		{
+		melee = 1;
+		}
+	}
+}
+
+//Hitbox Creation
+
 
 
 
@@ -113,28 +195,37 @@ if (wall_climbing)
 {
 if place_meeting(x+1,y,obj_wall)
 {
+/*
 image_angle = 90;
 if (vsp > 0) image_xscale = 1;
 if (vsp < 0) image_xscale = -1;
+*/
 }
 
 if place_meeting(x-1,y,obj_wall)
 {
+/*
 image_angle = -90;
 if (vsp > 0) image_xscale = -1;
 if (vsp < 0) image_xscale = 1;
+*/
 }
 }
 else
 {
+/*
 image_angle = 0;
 image_xscale = 1;
+*/
+
 }
 //Wall Jumping
 if (wall_climbing) jumps = 1;	//Wall Jump
 
-//vsp = vsp *.5;	//Slow Descent
-		
+if ((wall_climbing) && (!key_jump_held) && (!key_down))
+{
+ vsp = vsp *.5;	//Slow Descent
+}		
 
 }
 //=========== Lightning Mage  =================
@@ -243,8 +334,41 @@ if (vsp < 0)&& (!key_jump_held) && ((!key_guard = 1) && global.player1_class == 
 x += hsp;
 y += vsp;
 
-//Animation
+//=========== Animation =======================
 
+//Melee
+if (melee > 0) || (ice_melee > 0)
+{
+	if (global.player1_class = 1)
+	{
+	sprite_index = red_mage_melee_icelvl2;
+	image_index = 0;
+	
+	if (ice_melee < 5) ice_melee += 1;
+	else
+	{ 
+	ice_melee = 0;
+	}
+	
+	}
+	
+	else 
+	{
+	sprite_index = red_mage_melee_normal;
+	image_index = 0;
+	
+	if (melee < 5) melee += 1;
+	else
+	{ 
+	melee = 0;
+	}
+	
+	}
+
+}
+
+else
+{
 	//Ground
 	if (grounded)
 	{
@@ -266,13 +390,20 @@ y += vsp;
 			}
 	}
 	}
-	
+	//Special
+	else if (wall_climbing)
+	{
+		sprite_index = red_mage;
+		image_index = 1;
+	}
 	//Air
 	else
 	{
 	sprite_index =  red_mage;
 	image_index = 6;
 	}
-	
+}
+
+//Horizontal Flipping	
 if (hsp > 0) image_xscale = -1;
 if (hsp < 0) image_xscale = 1;
