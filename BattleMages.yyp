@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "1145ce05-dc28-4286-ba95-3aff3a45ec4a",
+            "Value": {
+                "id": "2fcf8126-409a-4296-851b-31cc7f8e35ef",
+                "resourcePath": "sprites\\red_mage_melee_icelvl2_down\\red_mage_melee_icelvl2_down.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "11529237-7cea-4261-ace1-bf3115c8f57d",
             "Value": {
                 "id": "60150122-1e11-4aea-b415-fb02d90f1126",
@@ -76,6 +84,14 @@
                 "id": "6cf10d9d-0e48-40d6-aa28-8af4b4ca6dcd",
                 "resourcePath": "views\\149852fc-0634-489f-b99c-faf488cac84b.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "156a42f1-2512-43c7-bec5-8afa59403e35",
+            "Value": {
+                "id": "78edcbbc-17c8-4ea1-8afc-b07234590cb2",
+                "resourcePath": "sprites\\red_mage_melee_icelvl2_up\\red_mage_melee_icelvl2_up.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -199,6 +215,14 @@
             }
         },
         {
+            "Key": "6eafb08c-1ce0-4324-9f2c-5316394263fa",
+            "Value": {
+                "id": "5c57b3f4-6dce-4266-92e0-b4e84ce2ada9",
+                "resourcePath": "sprites\\red_mage_jump\\red_mage_jump.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7456f92d-1c46-41ab-9791-e67dbc9c17d5",
             "Value": {
                 "id": "c4000306-ca70-47ed-a70f-84f78ee6f2e9",
@@ -276,6 +300,22 @@
                 "id": "452c7f83-fab3-492f-9d33-51f45468c5b5",
                 "resourcePath": "sprites\\sprite_fireball\\sprite_fireball.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "9e79234b-c3b0-4fe9-82f2-20c44fd77152",
+            "Value": {
+                "id": "0af04f43-4593-4927-90c5-6a1399c2d541",
+                "resourcePath": "views\\9e79234b-c3b0-4fe9-82f2-20c44fd77152.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "a9188620-a624-4a5a-83ae-a1b53faf038b",
+            "Value": {
+                "id": "6b80c446-bbdb-4318-bdcf-6941913f3cd0",
+                "resourcePath": "options\\linux\\options_linux.yy",
+                "resourceType": "GMLinuxOptions"
             }
         },
         {
@@ -412,6 +452,22 @@
                 "id": "4fbe64da-b91d-435e-aa71-4d6015dca5b0",
                 "resourcePath": "sprites\\blue_mage\\blue_mage.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "eeda69fe-2bd4-4ed7-bf47-4149d7535610",
+            "Value": {
+                "id": "9e448a55-3839-4711-b079-29638f0e97c2",
+                "resourcePath": "tilesets\\tileset0\\tileset0.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
+            "Key": "f418569b-3bdd-4706-a0e4-364317f54032",
+            "Value": {
+                "id": "6aea63c4-ad08-4082-923c-eaeac3ac5933",
+                "resourcePath": "options\\mac\\options_mac.yy",
+                "resourceType": "GMMacOptions"
             }
         }
     ],

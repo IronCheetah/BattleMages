@@ -1,4 +1,4 @@
-// Get the player's input
+/ Get the player's input
 key_right = keyboard_check(ord("D")) || (gamepad_axis_value(0,gp_axislh) > 0);
 key_left = keyboard_check(ord("A"))  || (gamepad_axis_value(0,gp_axislh) < 0);
 key_down = keyboard_check(ord("S")) || (gamepad_axis_value(0,gp_axislv) > 0);
@@ -52,29 +52,30 @@ else
 		if (haxis > 0)
 		{
 		//Right
-		show_debug_message("Right");
-		pd_simple = point_direction(0, 0, 1, 0);
+		pd_simple = "right";
+		player_direction = point_direction(0, 0, 1, 0);
 		}
 		else
 		{
 		//Left
-		show_debug_message("Left");
-		pd_simple = point_direction(0, 0, -1, 0);	}
+		pd_simple = "left";
+		player_direction = point_direction(0, 0, -1, 0);	
+		}
 	}
 	
-	if (haxis_temp > vaxis_temp)
+	if (vaxis_temp > haxis_temp)
 	{
 		if (vaxis > 0)
 		{
-		//Down
-		show_debug_message("Down");
-		pd_simple = point_direction(0, 0, 0, 1);
+		//Down 
+		pd_simple = "down";
+		player_direction = point_direction(0, 0, 0, 1);
 		}
 		else
 		{
 		//Up
-		show_debug_message("Up");
-		pd_simple = point_direction(0, 0, 0, -1);
+		pd_simple = "up";
+		player_direction = point_direction(0, 0, 0, -1);
 		}
 	}
 	
@@ -83,9 +84,7 @@ else
 	//Vertical diretions
 	}
 }
-{
-player_direction = point_direction(0, 0, haxis, vaxis);
-}
+
 
 // Melee Check
 
@@ -341,8 +340,32 @@ if (melee > 0) || (ice_melee > 0)
 {
 	if (global.player1_class = 1)
 	{
+	if (pd_simple = "up")
+	{
+	//Up Sword Animation
+	sprite_index = red_mage_melee_icelvl2_up;
+	image_index = 0;
+	}
+	
+	else if (pd_simple = "down")
+	{
+	//Down Sword Animation
+	sprite_index = red_mage_melee_icelvl2_down;
+	image_index = 0;
+	}
+	
+	else if (pd_simple = "right")
+	{
 	sprite_index = red_mage_melee_icelvl2;
 	image_index = 0;
+	//Put spawn object code here 
+	}
+	
+	else if (pd_simple = "left")
+	{
+	sprite_index = red_mage_melee_icelvl2;
+	image_index = 0;
+	}
 	
 	if (ice_melee < 5) ice_melee += 1;
 	else

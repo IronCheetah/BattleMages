@@ -10,6 +10,7 @@ movespeed = 8;
 grounded = 0;
 jumps = 1;
 
+pd_simple = "left";
 player_direction = point_direction(0, 0, -1, 0);
 
 haxis = 1;
