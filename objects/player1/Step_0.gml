@@ -20,6 +20,10 @@ move = key_right - key_left;
 hsp = move * movespeed;
 
 
+//Death Check
+if (hp <= 0) dead = 1;
+else dead = 0;
+
 //Airborne Check
 if place_meeting(x,y+1,obj_wall) grounded = 1;
 else grounded = 0;
@@ -359,6 +363,11 @@ if (melee > 0) || (ice_melee > 0)
 	sprite_index = red_mage_melee_icelvl2;
 	image_index = 0;
 	//Put spawn object code here 
+	with(instance_create_depth(x,y,0,obj_weapon))
+	{
+		image_xscale = other.image_xscale;
+		with(instance_place(x,y,)
+	}
 	}
 	
 	else if (pd_simple = "left")

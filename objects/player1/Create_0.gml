@@ -16,6 +16,12 @@ player_direction = point_direction(0, 0, -1, 0);
 haxis = 1;
 vaxis = 1;
 
+
+//Life
+hp = 1;
+dead = 0;
+
+
 //Melee
 melee = 0;
 melee_cooldown = 15;
