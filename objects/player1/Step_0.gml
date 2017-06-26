@@ -1,4 +1,4 @@
-/ Get the player's input
+// Get the player's input
 key_right = keyboard_check(ord("D")) || (gamepad_axis_value(0,gp_axislh) > 0);
 key_left = keyboard_check(ord("A"))  || (gamepad_axis_value(0,gp_axislh) < 0);
 key_down = keyboard_check(ord("S")) || (gamepad_axis_value(0,gp_axislv) > 0);
