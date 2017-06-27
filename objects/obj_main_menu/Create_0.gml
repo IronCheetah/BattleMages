@@ -1,4 +1,4 @@
-menu [0] = "Start";
+menu[0] = "Start";
 menu[1] = "Options";
 menu[2] = "Quit";
 
@@ -27,24 +27,13 @@ global.anime = 0;
 //Pause Menu
 global.paused = 0;
 
-//Character Selection
+//Defult Character Selection
+//Default : Fire
+//Max Players : 4
 
-if (global.gp[0])
+for (i = 0; i < 3; i++)
 {
-global.pclass[0] = 0;
+	if (global.gp[i])global.pclass[i] = 0;
+
 }
 
-if (global.gp[1])
-{
-global.pclass[1] = 0;
-}
-
-if (global.gp[2])
-{
-global.pclass[2] = 0;
-}
-
-if (global.gp[3])
-{
-global.pclass[3] = 0;
-}

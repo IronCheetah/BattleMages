@@ -6,7 +6,8 @@
     "children": [
         "8319ceed-0b10-47b7-b869-9f8636bc5c6f",
         "e015ce3a-0ca7-4a88-ad16-b3f40f7455b2",
-        "dce3653e-1be5-4e47-a33f-76e68a02682d"
+        "dce3653e-1be5-4e47-a33f-76e68a02682d",
+        "14426eb2-4957-4a9f-ac3c-d49ee4c0bf62"
     ],
     "filterType": "GMObject",
     "folderName": "Spells",

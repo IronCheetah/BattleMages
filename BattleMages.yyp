@@ -79,6 +79,14 @@
             }
         },
         {
+            "Key": "14426eb2-4957-4a9f-ac3c-d49ee4c0bf62",
+            "Value": {
+                "id": "1c8e329d-bf12-4dac-81e8-10dd4b35b304",
+                "resourcePath": "objects\\obj_freeze\\obj_freeze.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "149852fc-0634-489f-b99c-faf488cac84b",
             "Value": {
                 "id": "6cf10d9d-0e48-40d6-aa28-8af4b4ca6dcd",
@@ -407,6 +415,14 @@
             }
         },
         {
+            "Key": "b7bdec55-dded-4a5a-8d75-2bc2e28a6ef8",
+            "Value": {
+                "id": "263c181f-8d6c-4fde-b7de-1054c8afb3a1",
+                "resourcePath": "sprites\\sprite_freeze\\sprite_freeze.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b8f74b32-f5bc-4473-a629-b6b1d630e793",
             "Value": {
                 "id": "51996f28-59e4-45c4-aeda-9907ba069e87",
@@ -560,8 +576,8 @@
         }
     ],
     "script_order": [
-        "5b144eff-4e0b-4e94-9d2b-eedf4e91b7d3",
-        "240b8b3e-a6e5-40d1-96f3-9cbcbe77c51a"
+        "240b8b3e-a6e5-40d1-96f3-9cbcbe77c51a",
+        "5b144eff-4e0b-4e94-9d2b-eedf4e91b7d3"
     ],
     "tutorial": ""
 }

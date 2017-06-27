@@ -22,7 +22,8 @@ switch (mpos)
 	
 	case 3: //Back
 	{
-	room_goto_previous();
+	room_goto(main_menu);
+	break;
 	
 	}
 	

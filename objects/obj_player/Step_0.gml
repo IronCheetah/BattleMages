@@ -166,6 +166,23 @@ else
 	}
 }
 
+//Frozen Check
+
+if (frozen)
+{
+	if (frozen_duration = 60)
+	{
+	 frozen = 0;
+	 frozen_duration = 0;
+	}
+	else
+	{
+	frozen_duration ++;
+	hsp = 0;
+	jumps = 0;
+	}
+}
+
 
 // Melee Check
 
@@ -307,6 +324,25 @@ if ((wall_climbing) && (!key_jump_held) && (!key_down))
 {
  vsp = vsp *.5;	//Slow Descent
 }		
+
+//Freeze Wave
+if (freeze_wave_cooldown < 80)
+{
+	freeze_wave_cooldown += 1;
+}
+
+if (key_special = 1)
+{
+	if (freeze_wave_cooldown = 80)
+	{
+	freeze_wave = instance_create_depth(x,y,0,obj_freeze);
+	freeze_wave.speed = 10;
+	freeze_wave.direction = player_direction;
+	freeze_wave.image_angle = freeze_wave.direction;
+	freeze_wave.user = player_number;
+	freeze_wave_cooldown = 0;
+	}
+}
 
 }
 //=========== Lightning Mage  =================

@@ -22,6 +22,11 @@ vaxis = 1;
 hp = 1;
 dead = 0;
 
+//Status Effects
+frozen = 0;
+frozen_duration = 0;
+stunned = 0;
+stun_duration = 0;
 
 //Melee
 melee = 0;
@@ -36,6 +41,7 @@ fireball_speed = 1;
 //Ice Mage
 wall_climbing = 0;
 ice_melee = 0;
+freeze_wave_cooldown = 80;
 
 //Lightning Mage
 static = 0;
