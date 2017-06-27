@@ -15,11 +15,7 @@ key_switch_ice_mage = keyboard_check(ord("3"));
 
 //=========== Checks ==========================
 
-//Pause Check
-if (global.paused)
-{
-scr_pause();
-}
+
 
 //React to inputs
 move = key_right - key_left;
@@ -274,6 +270,7 @@ if (key_special = 1)
 	discharge.speed = static/3.7;
 	discharge.direction = player_direction;
 	discharge.image_angle = discharge.direction;
+	discharge.user = player_number;
 	discharge.static_power = static;
 	
 	if (static > 50)

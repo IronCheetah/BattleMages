@@ -9,6 +9,7 @@ switch (mpos)
 	}
 	case 1: //Options
 	{
+		room_goto(options_menu);
 		break;
 	}
 	

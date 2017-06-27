@@ -1,5 +1,5 @@
 ///Initialize Variables
-player_number = 1;
+player_number = 0;
 pause_cooldown = 0;
 
 
@@ -44,6 +44,11 @@ static_max = 100;
 static_counter = 0;
 discharge_cooldown = 100;
 
-//Gamepad Settings
-gamepad_set_axis_deadzone(0,0.4);
+//Audio
+
+if (global.anime)
+{
+audio_play_sound(boku_no_hero,0,false)
+}
+
 

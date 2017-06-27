@@ -1,1 +1,0 @@
-global.player2_class = 0;

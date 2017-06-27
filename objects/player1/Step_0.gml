@@ -15,9 +15,9 @@ key_switch_character = gamepad_button_check(0,gp_shoulderl);
 //Debug character class switch
 if (key_switch_character)
 {
-	if (key_melee) global.player1_class = 1;	//Ice
-	if (key_guard) global.player1_class = 0;	//Fire	
-	if (key_special) global.player1_class = 2;	//Lightning
+	if (key_melee) global.pclass[player_number] = 1;	//Ice
+	if (key_guard) global.pclass[player_number] = 0;	//Fire	
+	if (key_special) global.pclass[player_number] = 2;	//Lightning
 }	
 
 
@@ -27,7 +27,7 @@ if (key_switch_character)
 	
 	
 //Pause Check
-
+/*
 if (pause_cooldown < 10)pause_cooldown += 1;
 
 if (global.paused)
@@ -38,16 +38,19 @@ if (global.paused)
 	{
 	global.paused = 0;
 	pause_cooldown = 0;
+	image_speed = temp_image_speed;
 	}
 	else
 	{
 		show_debug_message("pause");
 		hsp = 0;
 		vsp = 0;
+		temp_image_speed = image_speed;
+		image_speed = 0;
 		exit;
 	}
 }
-
+*/
 if ((key_start == 1) && (pause_cooldown == 10) && (!global.paused))
 {
  global.paused = 1;
@@ -139,7 +142,7 @@ if (vsp < 100) vsp += grav;
 if (grounded)jumps = 1;
 
 //Fire Mage Double Jump
-if ((grounded) && global.player1_class == 0)
+if ((grounded) && global.pclass[player_number] == 0)
 {
 	jumps = 2;
 }
@@ -172,7 +175,7 @@ if (key_melee)
 		
 		melee_cooldown = 0;
 		
-		if (global.player1_class = 1)
+		if (global.pclass[player_number] = 1)
 		{
 		ice_melee = 1;
 		}
@@ -190,7 +193,7 @@ if (key_melee)
 
 
 //=========== Fire Mage  ======================
-if (global.player1_class = 0) 
+if (global.pclass[player_number] = 0) 
 {
 //Fireball
 if fireball_cooldown < 35
@@ -220,7 +223,7 @@ vsp = key_guard * -jumpspeed;
 }
 
 //=========== Ice Mage  =======================
-if (global.player1_class = 1) 
+if (global.pclass[player_number] = 1) 
 {
 //Increased Horizontal Speed
 hsp = hsp * 1.5;
@@ -272,7 +275,7 @@ if ((wall_climbing) && (!key_jump_held) && (!key_down))
 
 }
 //=========== Lightning Mage  =================
-if (global.player1_class = 2)
+if (global.pclass[player_number] = 2)
 {
 //Static Electricity
 if (hsp == 0)
@@ -307,6 +310,7 @@ if (key_special = 1)
 	discharge.speed = static/3.7;
 	discharge.direction = player_direction;
 	discharge.image_angle = discharge.direction;
+	discharge.user = player_number;
 	discharge.static_power = static;
 	
 	if (static > 50)
@@ -369,7 +373,7 @@ if (key_jump) && (place_meeting(x+1,y,obj_wall) || place_meeting(x-1,y,obj_wall)
 */
 
 //Variable Jump Height
-if (vsp < 0)&& (!key_jump_held) && !((key_guard = 1) && (global.player1_class == 0)) 
+if (vsp < 0)&& (!key_jump_held) && !((key_guard = 1) && (global.pclass[player_number] == 0)) 
 {
 vsp = max(vsp,-jumpspeed/4);
 }
@@ -404,7 +408,7 @@ if (dead)
 
 else if (melee > 0) || (ice_melee > 0)
 {
-	if (global.player1_class = 1)
+	if (global.pclass[player_number] = 1)
 	{
 	if (pd_simple = "up")
 	{
