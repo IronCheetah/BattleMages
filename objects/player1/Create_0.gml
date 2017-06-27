@@ -1,4 +1,6 @@
 ///Initialize Variables
+player_number = 1;
+pause_cooldown = 0;
 
 
 //Movement

@@ -8,12 +8,51 @@ key_jump_held = keyboard_check(vk_space) || (gamepad_button_check(0, gp_face1));
 key_guard = mouse_check_button(mb_right) || gamepad_button_check(0, gp_face2);
 key_special = mouse_check_button(mb_left) || gamepad_button_check(0, gp_face4);
 key_melee = keyboard_check(ord("E")) || gamepad_button_check(0, gp_face3);
-
+key_start = gamepad_button_check(0,gp_start);
 //Testing Commands
-key_switch_lightning_mage = keyboard_check(ord("2"));
-key_switch_ice_mage = keyboard_check(ord("3"));
+key_switch_character = gamepad_button_check(0,gp_shoulderl);
+
+//Debug character class switch
+if (key_switch_character)
+{
+	if (key_melee) global.player1_class = 1;	//Ice
+	if (key_guard) global.player1_class = 0;	//Fire	
+	if (key_special) global.player1_class = 2;	//Lightning
+}	
+
 
 //=========== Checks ==========================
+
+
+	
+	
+//Pause Check
+
+if (pause_cooldown < 10)pause_cooldown += 1;
+
+if (global.paused)
+{
+
+	
+	if ((key_start == 1) && (pause_cooldown == 10) && (global.paused))
+	{
+	global.paused = 0;
+	pause_cooldown = 0;
+	}
+	else
+	{
+		show_debug_message("pause");
+		hsp = 0;
+		vsp = 0;
+		exit;
+	}
+}
+
+if ((key_start == 1) && (pause_cooldown == 10) && (!global.paused))
+{
+ global.paused = 1;
+ pause_cooldown = 0;
+}
 
 //React to inputs
 move = key_right - key_left;
@@ -167,6 +206,7 @@ if (key_special = 1)
 	fireball.speed =20;
 	fireball.direction = player_direction;
 	fireball.image_angle = fireball.direction;
+	fireball.user = player_number;
 	fireball_cooldown = 0;
 	}
 }
@@ -329,8 +369,10 @@ if (key_jump) && (place_meeting(x+1,y,obj_wall) || place_meeting(x-1,y,obj_wall)
 */
 
 //Variable Jump Height
-if (vsp < 0)&& (!key_jump_held) && ((!key_guard = 1) && global.player1_class == 0) vsp = max(vsp,-jumpspeed/4)
-
+if (vsp < 0)&& (!key_jump_held) && !((key_guard = 1) && (global.player1_class == 0)) 
+{
+vsp = max(vsp,-jumpspeed/4);
+}
 
 
 
@@ -339,8 +381,28 @@ y += vsp;
 
 //=========== Animation =======================
 
+//Death
+
+if ((sprite_index = red_mage_death) && (image_index = 3))
+{
+	image_speed = 0;
+	
+	// Put dying code here
+
+}
+if (dead)
+{
+	if (sprite_index!= red_mage_death)image_index = 0;
+		sprite_index = red_mage_death;
+	hsp = 0;
+
+
+}
+
+
 //Melee
-if (melee > 0) || (ice_melee > 0)
+
+else if (melee > 0) || (ice_melee > 0)
 {
 	if (global.player1_class = 1)
 	{
@@ -363,11 +425,7 @@ if (melee > 0) || (ice_melee > 0)
 	sprite_index = red_mage_melee_icelvl2;
 	image_index = 0;
 	//Put spawn object code here 
-	with(instance_create_depth(x,y,0,obj_weapon))
-	{
-		image_xscale = other.image_xscale;
-		with(instance_place(x,y,)
-	}
+
 	}
 	
 	else if (pd_simple = "left")
@@ -398,6 +456,7 @@ if (melee > 0) || (ice_melee > 0)
 	}
 
 }
+
 
 else
 {
@@ -431,8 +490,7 @@ else
 	//Air
 	else
 	{
-	sprite_index =  red_mage;
-	image_index = 6;
+		sprite_index = red_mage_jump;
 	}
 }
 

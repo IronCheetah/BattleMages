@@ -7,3 +7,6 @@ mpos = 0;	//Menu Position
 
 //Gamepad Settings
 gamepad_set_axis_deadzone(0,0.2);
+
+//Pause Menu
+global.paused = 0;
