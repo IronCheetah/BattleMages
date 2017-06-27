@@ -21,6 +21,9 @@ for (var i = 0; i < gp_num; i++;)
    }
    
 
+//Anime Music Testing
+global.anime = 0;
+
 //Pause Menu
 global.paused = 0;
 

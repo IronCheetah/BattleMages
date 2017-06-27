@@ -1,4 +1,4 @@
-if (speed = 0) speed = 1;
+event_inherited();
 
 target = instance_place(x,y,obj_player);
 /*if (user != target.player_number)

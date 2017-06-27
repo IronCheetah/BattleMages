@@ -12,7 +12,8 @@
         "156a42f1-2512-43c7-bec5-8afa59403e35",
         "d794aae1-b5c1-4360-8d06-cdfc36557f50",
         "6eafb08c-1ce0-4324-9f2c-5316394263fa",
-        "1145ce05-dc28-4286-ba95-3aff3a45ec4a"
+        "1145ce05-dc28-4286-ba95-3aff3a45ec4a",
+        "bd881106-c6e8-4775-868e-7a56847c4f69"
     ],
     "filterType": "GMSprite",
     "folderName": "Red Mage",

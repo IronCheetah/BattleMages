@@ -1,4 +1,5 @@
 ///Initialize Variables
+event_inherited();
 player_number = 2;
 
 

@@ -1,3 +1,9 @@
+//Parent
+event_inherited();
+
+//Pause
+if (global.paused) exit;
+
 // Get the player's input
 key_right = keyboard_check(ord("D")) || (gamepad_axis_value(0,gp_axislh) > 0);
 key_left = keyboard_check(ord("A"))  || (gamepad_axis_value(0,gp_axislh) < 0);
@@ -8,7 +14,6 @@ key_jump_held = keyboard_check(vk_space) || (gamepad_button_check(0, gp_face1));
 key_guard = mouse_check_button(mb_right) || gamepad_button_check(0, gp_face2);
 key_special = mouse_check_button(mb_left) || gamepad_button_check(0, gp_face4);
 key_melee = keyboard_check(ord("E")) || gamepad_button_check(0, gp_face3);
-key_start = gamepad_button_check(0,gp_start);
 //Testing Commands
 key_switch_character = gamepad_button_check(0,gp_shoulderl);
 
@@ -207,6 +212,7 @@ if (key_special = 1)
 	{
 	fireball = instance_create_depth(x,y,0,obj_fireball);
 	fireball.speed =20;
+	discharge.max_speed = 20;
 	fireball.direction = player_direction;
 	fireball.image_angle = fireball.direction;
 	fireball.user = player_number;
@@ -308,6 +314,7 @@ if (key_special = 1)
 	{
 	discharge = instance_create_depth(x,y,0,obj_discharge);
 	discharge.speed = static/3.7;
+	discharge.max_speed = static/3.7;
 	discharge.direction = player_direction;
 	discharge.image_angle = discharge.direction;
 	discharge.user = player_number;

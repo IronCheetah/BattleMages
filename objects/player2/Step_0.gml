@@ -1,3 +1,9 @@
+//Parent
+event_inherited();
+
+//Pause
+if (global.paused) exit;
+
 // Get the player's input
 key_right = keyboard_check(ord("D")) || (gamepad_axis_value(1,gp_axislh) > 0);
 key_left = keyboard_check(ord("A"))  || (gamepad_axis_value(1,gp_axislh) < 0);

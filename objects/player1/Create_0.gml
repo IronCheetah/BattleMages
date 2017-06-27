@@ -1,6 +1,7 @@
 ///Initialize Variables
+event_inherited();
 player_number = 0;
-pause_cooldown = 0;
+
 
 
 //Movement

@@ -1,5 +1,7 @@
 //Pause 
 
+key_start = gamepad_button_check(player_number,gp_start);
+
 if (pause_cooldown < 10)pause_cooldown += 1;
 
 if (global.paused)
@@ -17,9 +19,9 @@ if (global.paused)
 		show_debug_message("pause");
 		hsp = 0;
 		vsp = 0;
-		temp_image_speed = image_speed;
+		if (!image_speed = 0)temp_image_speed = image_speed;
 		image_speed = 0;
-		exit;
+	
 	}
 }
 
