@@ -36,18 +36,15 @@ global.pclass[0] = 0;
 
 if (global.gp[1])
 {
-global.player2_class = 0;
 global.pclass[1] = 0;
 }
 
 if (global.gp[2])
 {
-global.player3_class = 0;
 global.pclass[2] = 0;
 }
 
 if (global.gp[3])
 {
-global.player4_class = 0;
 global.pclass[3] = 0;
 }

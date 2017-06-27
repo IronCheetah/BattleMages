@@ -23,5 +23,5 @@ for (var i = 0; i < global.gp_number; i++)
 	if (selec_ice) global.pclass[i] = 1;
 	if (selec_lightning) global.pclass[i] = 2;
 	
-	
+	show_debug_message(i);
 }

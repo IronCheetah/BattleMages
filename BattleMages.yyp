@@ -183,6 +183,14 @@
             }
         },
         {
+            "Key": "3866cf2a-74bf-4649-9764-f76d9196ddc8",
+            "Value": {
+                "id": "83418f76-7802-4c12-8fe0-4383203bbbe9",
+                "resourcePath": "sprites\\blue_mage_death\\blue_mage_death.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3eca4ddb-55a4-44cf-845c-7ca20e1a0927",
             "Value": {
                 "id": "d6377eb4-0caa-4742-a7c8-f062689d1e11",
@@ -263,6 +271,14 @@
             }
         },
         {
+            "Key": "782e9708-bd97-4da9-b7a1-c3007fb83fff",
+            "Value": {
+                "id": "7092dfae-41e0-4303-8bd5-cd1fba6a9238",
+                "resourcePath": "views\\782e9708-bd97-4da9-b7a1-c3007fb83fff.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "7c244e70-1241-45cf-83eb-088f482b5f72",
             "Value": {
                 "id": "481776ba-a4cc-4339-8e75-a5e3911ad755",
@@ -307,6 +323,14 @@
             "Value": {
                 "id": "b25eaf2a-c550-4a5c-8e7b-44052457c98f",
                 "resourcePath": "sprites\\sprite_sword\\sprite_sword.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "7ebbdeb6-a050-4179-a359-f7789a53abc1",
+            "Value": {
+                "id": "75014345-5cc8-4337-ae3f-86983a01ba7c",
+                "resourcePath": "sprites\\blue_mage_jump\\blue_mage_jump.yy",
                 "resourceType": "GMSprite"
             }
         },
