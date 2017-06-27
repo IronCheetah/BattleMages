@@ -44,8 +44,9 @@ key_jump_held = keyboard_check(vk_space) || (gamepad_button_check(player_number,
 key_guard = mouse_check_button(mb_right) || gamepad_button_check(player_number, gp_face2);
 key_special = mouse_check_button(mb_left) || gamepad_button_check(player_number, gp_face4);
 key_melee = keyboard_check(ord("E")) || gamepad_button_check(player_number, gp_face3);
+
 //Testing Commands
-key_switch_character = gamepad_button_check(0,gp_shoulderl);
+key_switch_character = gamepad_button_check(player_number,gp_shoulderl);
 
 //Debug character class switch
 if (key_switch_character)
@@ -57,40 +58,6 @@ if (key_switch_character)
 
 
 //=========== Checks ==========================
-
-
-	
-	
-//Pause Check
-/*
-if (pause_cooldown < 10)pause_cooldown += 1;
-
-if (global.paused)
-{
-
-	
-	if ((key_start == 1) && (pause_cooldown == 10) && (global.paused))
-	{
-	global.paused = 0;
-	pause_cooldown = 0;
-	image_speed = temp_image_speed;
-	}
-	else
-	{
-		show_debug_message("pause");
-		hsp = 0;
-		vsp = 0;
-		temp_image_speed = image_speed;
-		image_speed = 0;
-		exit;
-	}
-}
-*/
-if ((key_start == 1) && (pause_cooldown == 10) && (!global.paused))
-{
- global.paused = 1;
- pause_cooldown = 0;
-}
 
 //React to inputs
 move = key_right - key_left;
@@ -107,8 +74,8 @@ else grounded = 0;
 
 //Direction Check
 
-var haxis = gamepad_axis_value(0, gp_axislh);
-var vaxis = gamepad_axis_value(0, gp_axislv);
+var haxis = gamepad_axis_value(player_number, gp_axislh);
+var vaxis = gamepad_axis_value(player_number, gp_axislv);
 
 
 if ((haxis = 0) && (vaxis = 0))
